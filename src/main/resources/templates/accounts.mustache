@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--    <script type="text/javascript" src="main.js"></script>-->
+    <script type="text/javascript" src="/account_jquery.js"></script>
+
+</head>
+
+<body>
+<div class="form">
+    <form method="post" id="accountForm">
+        <input type="text" placeholder="amount" name="amount" value="100">
+
+        <select name="client_id" id="contact">
+            {{#clients}}
+                <option value="{{id}}">{{surname}}</option>
+            {{/clients}}
+        </select>
+
+
+        <input type="submit" value="ADD" id="loadButton">
+    </form>
+</div>
+<div class="load">
+    <div id="output"></div>
+</div>
+</body>
+</html>

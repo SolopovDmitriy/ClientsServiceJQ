@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    {{{boostrapHead}}}
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form">
+    <form method="post" action="add_client">
+        <input type="text" placeholder="surname" name="surname" value="S">
+        <input type="text" placeholder="name" name="name" value="N">
+        <input type="text" placeholder="patronymic" name="patronymic" value="P">
+        <input type="text" placeholder="email" name="email" value="E">
+        <input type="text" placeholder="dd.mm.yyyy" name="birthDate" value="12.03.1999">
+        <select name="gender">
+            <option value="NONE">NONE</option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+        <input type="submit" value="ADD">
+    </form>
+</div>
+<div class="table">
+    {{#no-clients}}
+        <div class="alert">No Clients!</div>
+    {{/no-clients}}
+    {{^no-clients}}
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Patronymic</th>
+                <th>Email</th>
+            </tr>
+            {{#clients}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{surname}}</td>
+                    <td>{{name}}</td>
+                    <td>{{patronymic}}</td>
+                    <td>{{email}}</td>
+                    <td>{{birthDate}}</td>
+                    <td>{{gender}}</td>
+                </tr>
+            {{/clients}}
+        </table>
+<!--        {{#clients}}-->
+<!--            <div>{{.}}</div>-->
+<!--        {{/clients}}-->
+    {{/no-clients}}
+</div>
+</body>
+</html>

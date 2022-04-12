@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="main.js"></script>-->
+    <script type="text/javascript" src="/clients_jquery.js"></script>
+    {{{boostrapHead}}}
+</head>
+
+<body>
+<div class="form">
+    <form method="post" id="clientForm">
+        <input type="text" placeholder="surname" name="surname" value="S">
+        <input type="text" placeholder="name" name="name" value="N">
+        <input type="text" placeholder="patronymic" name="patronymic" value="P">
+        <input type="text" placeholder="email" name="email" value="E">
+        <input type="text" placeholder="dd.mm.yyyy" name="birthDate" value="12.03.1999">
+        <select name="gender">
+            <option value="NONE">NONE</option>
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+        <input type="submit" value="ADD" id="loadButton">
+    </form>
+</div>
+<div class="load">
+    <div id="output"></div>
+</div>
+</body>
+</html>
